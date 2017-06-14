@@ -173,7 +173,7 @@ print('table[3,3 : 9]:', table[3,3 : 9])
 print('table[3,3:]:', table[3,3:])
 print()
 
-print('2D slices (rows, columns)')
+print('2D slices (row slice, column slice)')
 print('table[:2, :-1]:', table[:2, :-1], sep='\n')
 print()
 print('table[-1, ::2]:', table[-1, ::2], sep='\n')
