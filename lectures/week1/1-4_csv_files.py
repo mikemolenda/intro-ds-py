@@ -51,3 +51,25 @@ for tuple in avg_cty_mpg_by_cyl:
     print('{} cylinders: {:.2f} mpg'.format(tuple[0], tuple[1]))
 
 print()
+
+# Group average city MPG by vehicle class
+vehicle_classes = set(entry['class'] for entry in mpg)
+
+avg_cty_mpg_by_class = []
+
+for vehicle_class in vehicle_classes:
+    sum_cty_mpg = 0
+    vc_count = 0
+
+    for entry in mpg:
+        if entry['class'] == vehicle_class:
+            sum_cty_mpg += float(entry['cty'])
+            vc_count += 1
+
+    avg_cty_mpg_by_class.append((vehicle_class, sum_cty_mpg / vc_count))
+
+# Sort by mpg, desc
+avg_cty_mpg_by_class.sort(key=lambda avg_tuple: avg_tuple[1], reverse=True)
+
+for tuple in avg_cty_mpg_by_class:
+    print('{}: {:.2f} mpg'.format(tuple[0], tuple[1]))
