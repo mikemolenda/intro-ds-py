@@ -48,4 +48,64 @@ print()
 
 # PART 2 QUERY SERIES
 
+# Get key by index number
+print(sports_series.iloc[3])
+
+# Get key by value
+print(sports_series.loc['Golf'])
+print()
+
+# Add / update
+print(animals_series)
+print()
+
+animals_series.loc['China'] = 'Panda'
+print(animals_series)
+print()
+
+animals_series.loc['America'] = 'Eagle'
+print(animals_series)
+print()
+
+# Vectorization: aggregate operations
+numbers = pd.Series([100.0, 120.0, 10.0, 3.0])
+print(numbers)
+print()
+
+print(np.sum(numbers))
+print()
+
+# Faster than iteration - uses vectorization
+long_series = pd.Series(np.random.randint(0, 1000, 10000))
+print(long_series.head(10))
+print(len(long_series))
+print(np.sum(long_series))
+print()
+
+# Broadcasting: apply operation to every member of series
+long_series += 111
+print(long_series.head(10))
+print()
+
+# Appending series
+print(sports_series)
+print()
+
+cricket_loving_countries = pd.Series(['Australia',
+                                      'Barbados',
+                                      'Pakistan',
+                                      'England'],
+                                     index = ['Cricket',
+                                              'Cricket',
+                                              'Cricket',
+                                              'Cricket'])
+
+sports_series = sports_series.append(cricket_loving_countries)
+print(sports_series)
+print()
+
+# Series may have non-unique keys. Querying for one of these keys returns a series
+print(sports_series.loc['Cricket'])
+print()
+
 
