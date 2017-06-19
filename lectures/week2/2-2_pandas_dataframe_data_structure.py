@@ -3,7 +3,7 @@
 import pandas as pd
 import numpy as np
 
-# Create from dictionaries (dict = row)
+# Create from group of Series / dictionaries (1 Series = 1 row)
 
 purchase_1 = pd.Series({'Name': 'Chris',
                         'Item Purchased': 'Dog Food',
