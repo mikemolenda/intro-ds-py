@@ -20,4 +20,21 @@ pet_supplies = pd.DataFrame([purchase_1, purchase_2, purchase_3], index=['Store 
 print(pet_supplies)
 print()
 
+# Querying
+
+# Returns single row as Series
+print(pet_supplies.loc['Store 2'])
+print()
+print(type(pet_supplies.loc['Store 2']))
+print()
+
+# Returns multiple rows as DataFrame
+print(pet_supplies.loc['Store 1'])
+print()
+print(type(pet_supplies.loc['Store 1']))
+print()
+
+# Query single column, returns 1-col DataFrame
+print(pet_supplies['Item Purchased'])
+print()
 
